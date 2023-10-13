@@ -2,10 +2,10 @@ package com.gft.priceCalculator.unit.price.infrastructure.errorHandler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.gft.priceCalculator.price.application.getPrice.dateParser.InvalidDateException;
 import com.gft.priceCalculator.price.domain.exception.PriceNotFoundException;
 import com.gft.priceCalculator.price.infrastructure.errorHandler.ControllerErrorHandler;
 import com.gft.priceCalculator.price.infrastructure.errorHandler.ErrorMessage;
-import com.gft.priceCalculator.price.application.getPrice.dateParser.InvalidDateException;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -53,7 +53,7 @@ public class ControllerErrorHandlerTest {
 
     @Test
     void test_handle_missing_parameter_exception() {
-        MissingServletRequestParameterException exception = new MissingServletRequestParameterException("brandId", "Integer");
+        MissingServletRequestParameterException exception = new MissingServletRequestParameterException("brandId" , "Integer");
 
         ResponseEntity<ErrorMessage> response = controllerErrorHandler.handleMissingParameterException(exception);
 
