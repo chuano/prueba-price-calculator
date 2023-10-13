@@ -64,7 +64,7 @@ public class GetPriceTest {
 
     @Test
     public void test_returns_error_given_missing_parameter() throws Exception {
-        String url = "/api/v1/price?productId=35455&date=2020-06-16T21:00:00";
+        String url = "/api/v1/price";
         mockMvc.perform(MockMvcRequestBuilders.get(url))
                 .andExpect(status().isBadRequest());
     }
